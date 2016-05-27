@@ -1,0 +1,9 @@
+{
+	"name" : "Aria",
+	"version" : "0.1.2",
+	"description" : "using Aria",
+	"provides" : {
+		"Aria" : "lib/Aria.pm6"
+	},
+	"source-url" : "git://github.com/palapitta/Aria"
+}
