@@ -56,7 +56,7 @@ class Aria {
 
   method get-magnet($dir, $magnet) {
     unless $dir { mkdir $dir; }
-    shell("aria2c -d dir $magnet > /dev/null");
+    shell("aria2c -d $dir $magnet > /dev/null");
   }
 
   multi method get-torrent($dir, $torrent-file-path) {
