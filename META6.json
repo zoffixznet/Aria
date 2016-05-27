@@ -2,6 +2,9 @@
 	"name" : "Aria",
 	"version" : "0.1.2",
 	"description" : "using Aria",
+	"authors" : [
+		"Rajkumar Reddy"
+	],
 	"provides" : {
 		"Aria" : "lib/Aria.pm6"
 	},
