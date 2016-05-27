@@ -18,7 +18,7 @@ my $proc = start {
   say "Download Complete";
 }
 say "Do other work";
-await $proc; # download in other process to do other work while downloading
+await $proc; # download in separate process to do other work while downloading
 
 ### Other functions
 $x.get-limit($dir, $link, $speed) # downloads at limited speed, give speed in string format
@@ -27,7 +27,7 @@ $x.get-multi($dir, $link1, $link2);
 $x.get-multi($dir,$link1,$link2, $link3, $link4);
 # you can pass upto four different links to download same file
 $x.get-concurrent($dir, $link, $num); # downloads to the directory $dir using $num connections to host
-$x.get-torrent($dir, $pathorlink-to-torrent); # Downloads a torrent file
+$x.get-torrent($dir, $pathorlink-to-torrent); # Downloads from a torrent file
 $x.get-torrent-limit($dir, $pathorlink-to-torrent, $up-speed, $down-speed);
 # limits upload speed and download speed, send arguments in string form
 $x.get-metalink($dir, $metalink); # downloads metalink
