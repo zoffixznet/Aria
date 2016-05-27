@@ -20,7 +20,8 @@ my $proc = start {
 say "Do other work";
 await $proc; # download in separate process to do other work while downloading
 
-### Other functions
+###  functions
+$x.get($dir, $link) # downloads http(s)/ftp link to $dir directory
 $x.get-limit($dir, $link, $speed) # downloads at limited speed, give speed in string format
 $x.get-multi($dir, $link1, $link2);
 # use get-multi to download the same file from different servers
