@@ -21,12 +21,10 @@ say "Do other work";
 await $proc; # download in other process to do other work while downloading
 
 ### Other functions
-
-```perl6
 $x.get-limit($dir, $link, $speed)
 # downloads at limited speed, give speed in string format
 $x.get-multi($dir, $link1, $link2);
-# use get-multi to download a file from different servers
+# use get-multi to download the same file from different servers
 $x.get-multi($dir,$link1,$link2, $link3, $link4);
 # you can pass upto four different links to download same file
 $x.get-concurrent($dir, $link, $num);
@@ -41,9 +39,7 @@ $x.get-magnet($dir, $magnet);
 $x.get-fromfile($dir, $file-path);
 #downloads all links in a file
 
-### Example
-
-```perl6
+#_________________________
 my $link1 = "http://mirror.is.co.za/mirrors/linuxmint.com/iso//stable/17.3/linuxmint-17.3-cinnamon-64bit.iso";
 my $link2 = "http://mirror.nus.edu.sg/LinuxMint-ISO//stable/17.3/linuxmint-17.3-cinnamon-64bit.iso";
 my $link3 = "http://mirrors.psu.ac.th/linuxmint-iso//stable/17.3/linuxmint-17.3-cinnamon-64bit.iso";
@@ -55,5 +51,4 @@ say "Do other work";
 await $proc;
 
 # _______________
-
 $x.get-torrent("./mint","http://torrents.linuxmint.com/torrents/linuxmint-17.3-cinnamon-64bit.iso.torrent","250k","1M");
