@@ -26,7 +26,7 @@ class Aria {
 
     my $lim = check($speed);
 
-  	shell("aria2c -d $dir --max-download-limit=$lim $link> /dev/null");
+  	shell("aria2c -d $dir --max-download-limit=$lim $link > /dev/null");
   }
 
   multi method get-multi($dir, $link1, $link2) {
@@ -59,12 +59,12 @@ class Aria {
     shell("aria2c -d $dir $magnet > /dev/null");
   }
 
-  multi method get-torrent($dir, $torrent-file-path) {
+  method get-torrent($dir, $torrent-file-path) {
     unless $dir { mkdir $dir; }
     shell("aria2c -d $dir $torrent-file-path > /dev/null");
   }
 
-  multi method get-torrent-limit($dir, $torrent-file-path, $up-limit, $down-limit) {
+  method get-torrent-limit($dir, $torrent-file-path, $up-limit, $down-limit) {
     unless $dir { mkdir $dir; }
 
     my $uplim = check($up-limit);
@@ -73,7 +73,7 @@ class Aria {
     shell("aria2c -d $dir -u $uplim --max-download-limit=$downlim $torrent-file-path > /dev/null");
   }
 
-  multi method get-metalink($dir, $metalink) {
+  method get-metalink($dir, $metalink) {
     unless $dir { mkdir $dir; }
     shell("aria2c -d $dir $metalink > /dev/null");
   }

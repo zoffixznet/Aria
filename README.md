@@ -29,7 +29,7 @@ $x.get-multi($dir,$link1,$link2, $link3, $link4);
 $x.get-concurrent($dir, $link, $num); # downloads to the directory $dir using $num connections to host
 $x.get-torrent($dir, $pathorlink-to-torrent); # Downloads from a torrent file
 $x.get-torrent-limit($dir, $pathorlink-to-torrent, $up-speed, $down-speed);
-# limits upload speed and download speed, send arguments in string form
+# limits upload speed and download speed, send arguments in string form eg: "2M" or "150K"
 $x.get-metalink($dir, $metalink); # downloads metalink
 $x.get-magnet($dir, $magnet); # downloads magnetlink
 $x.get-fromfile($dir, $file-path); #downloads all links in a file
