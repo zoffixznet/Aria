@@ -21,23 +21,18 @@ say "Do other work";
 await $proc; # download in other process to do other work while downloading
 
 ### Other functions
-$x.get-limit($dir, $link, $speed)
-# downloads at limited speed, give speed in string format
+$x.get-limit($dir, $link, $speed) # downloads at limited speed, give speed in string format
 $x.get-multi($dir, $link1, $link2);
 # use get-multi to download the same file from different servers
 $x.get-multi($dir,$link1,$link2, $link3, $link4);
 # you can pass upto four different links to download same file
-$x.get-concurrent($dir, $link, $num);
-# downloads to the directory $dir using $num connections to host
-$x.get-torrent($dir, $path-to-torrent);
-# Downloads a torrent file
-$x.get-torrent-limit($dir, $path-to-torrent, $up-speed, $down-speed);
+$x.get-concurrent($dir, $link, $num); # downloads to the directory $dir using $num connections to host
+$x.get-torrent($dir, $pathorlink-to-torrent); # Downloads a torrent file
+$x.get-torrent-limit($dir, $pathorlink-to-torrent, $up-speed, $down-speed);
 # limits upload speed and download speed, send arguments in string form
-# k for kbps m for mbps
-$x.get-metalink($dir, $metalink);
-$x.get-magnet($dir, $magnet);
-$x.get-fromfile($dir, $file-path);
-#downloads all links in a file
+$x.get-metalink($dir, $metalink); # downloads metalink
+$x.get-magnet($dir, $magnet); # downloads magnetlink
+$x.get-fromfile($dir, $file-path); #downloads all links in a file
 
 #_________________________
 my $link1 = "http://mirror.is.co.za/mirrors/linuxmint.com/iso//stable/17.3/linuxmint-17.3-cinnamon-64bit.iso";
@@ -51,4 +46,4 @@ say "Do other work";
 await $proc;
 
 # _______________
-$x.get-torrent("./mint","http://torrents.linuxmint.com/torrents/linuxmint-17.3-cinnamon-64bit.iso.torrent","250k","1M");
+$x.get-torrent-limit("./mint","http://torrents.linuxmint.com/torrents/linuxmint-17.3-cinnamon-64bit.iso.torrent","250k","1M");
